@@ -99,6 +99,8 @@ function handleSlide(e){
                     setTwo();
                 }
                 break;
+            default:
+                break;
                 
         }
     }
@@ -365,7 +367,7 @@ function restartGame(){
 document.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
-});
+})
 document.addEventListener('touchend', (e) => {
     if(!e.target.className.includes("tile")){
         return;
@@ -403,7 +405,7 @@ document.addEventListener('touchend', (e) => {
 			alert("Click any arrow key to restart")
 		}, 100);
 	}
-})
+});
 
 document.addEventListener("touchmove", (e) =>{
     if(!e.target.className.includes("tile")){
@@ -416,7 +418,6 @@ document.addEventListener("touchmove", (e) =>{
 function canMoveLeft(){
     for(let r=0; r<rows; r++){
 		for(let c=0; c<cols; c++){
-
             if(board[r][c] !== 0){
                 if(board[r][c-1] === 0 || board[r][c-1] === board[r][c]){
                     return true;
